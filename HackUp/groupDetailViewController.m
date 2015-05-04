@@ -30,6 +30,22 @@
     self.groupTitleView.textAlignment = NSTextAlignmentCenter;
 }
 
+- (IBAction)followGroup:(id)sender {
+    
+    [self.followButton setTitle:@"Followed" forState:UIControlStateNormal];
+    [self.followButton setEnabled:NO];
+    [self.followButton sizeToFit];
+    self.followButton.layer.borderWidth = 0;
+}
+
+- (IBAction)sendRequest:(id)sender {
+    
+    [self.joinButton setTitle:@"Pending" forState:UIControlStateNormal];
+    [self.joinButton setEnabled:NO];
+    [self.joinButton sizeToFit];
+    self.joinButton.layer.borderWidth = 0;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

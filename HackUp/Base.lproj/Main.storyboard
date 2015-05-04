@@ -332,6 +332,9 @@
                                                             <integer key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="sendRequest:" destination="syd-lJ-w9k" eventType="touchDown" id="xbS-ne-z5l"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQm-3u-Y5W">
                                                     <rect key="frame" x="45" y="426" width="85" height="30"/>
@@ -346,6 +349,9 @@
                                                             <integer key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="followGroup:" destination="syd-lJ-w9k" eventType="touchDown" id="5Qx-kh-AN6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
