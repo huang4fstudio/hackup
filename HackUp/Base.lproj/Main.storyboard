@@ -80,7 +80,7 @@
                                                     <rect key="frame" x="0.0" y="12" width="320" height="179"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="CS465" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO6-lO-xm4">
-                                                            <rect key="frame" x="74" y="116" width="172" height="46"/>
+                                                            <rect key="frame" x="74" y="104" width="172" height="46"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -88,6 +88,24 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-jV-gWH">
                                                             <rect key="frame" x="113" y="8" width="95" height="95"/>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDC-ej-jdn">
+                                                            <rect key="frame" x="106" y="149" width="109" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <state key="normal" title="  Invite  ">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="handleButtonClick:" destination="7Rl-uP-vK6" eventType="touchDown" id="peO-9f-GQu"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -110,6 +128,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="People Profile" id="fyf-F7-ER6"/>
                     <connections>
+                        <outlet property="invite" destination="ZDC-ej-jdn" id="k7G-PM-P3w"/>
                         <outlet property="peopleFaceImageView" destination="a4h-jV-gWH" id="Cou-gh-90G"/>
                         <outlet property="peopleInfoTextView" destination="fzg-Uk-2CP" id="ip1-lh-It4"/>
                         <outlet property="peopleNameView" destination="iO6-lO-xm4" id="mRG-Vm-vLN"/>
@@ -117,7 +136,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeL-2c-M62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-531" y="-3193"/>
+            <point key="canvasLocation" x="101" y="-2449"/>
         </scene>
         <!--Groups-->
         <scene sceneID="ty7-7Y-Nmk">
@@ -220,12 +239,12 @@
                         <segue destination="Mrt-UM-33t" kind="relationship" relationship="viewControllers" id="QBG-Iv-6hK"/>
                         <segue destination="cbG-Eh-LzX" kind="relationship" relationship="viewControllers" id="68v-ei-uG2"/>
                         <segue destination="ftp-Rb-RP4" kind="relationship" relationship="viewControllers" id="PbQ-08-TeV"/>
-                        <segue destination="hrn-lg-gFW" kind="relationship" relationship="viewControllers" id="5Hh-Yj-JSY"/>
+                        <segue destination="hrn-lg-gFW" kind="relationship" relationship="viewControllers" id="Oq5-h7-JfR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53Q-dS-Glj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2453" y="-2383"/>
+            <point key="canvasLocation" x="-2809" y="-2195"/>
         </scene>
         <!--Group Profile-->
         <scene sceneID="shm-Yc-20K">
@@ -300,6 +319,34 @@
                                                     <rect key="frame" x="0.0" y="277" width="320" height="1"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUA-Vp-Ydh">
+                                                    <rect key="frame" x="211" y="426" width="74" height="30"/>
+                                                    <state key="normal" title="Join">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQm-3u-Y5W">
+                                                    <rect key="frame" x="45" y="426" width="85" height="30"/>
+                                                    <state key="normal" title="Follow">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -313,9 +360,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Group Profile" id="EEe-xP-XQx"/>
                     <connections>
+                        <outlet property="followButton" destination="RQm-3u-Y5W" id="EeD-EQ-9uC"/>
                         <outlet property="groupDescriptionView" destination="9QW-Uj-Qax" id="BFQ-uD-Zii"/>
                         <outlet property="groupFaceView" destination="znH-NP-069" id="cdc-b3-AKQ"/>
                         <outlet property="groupTitleView" destination="SbG-Ug-Rfg" id="LLV-1d-Bdp"/>
+                        <outlet property="joinButton" destination="gUA-Vp-Ydh" id="Zk4-AL-G6i"/>
                         <outlet property="memberFaceCollectionView" destination="cAi-ll-IiX" id="lsY-c4-khB"/>
                     </connections>
                 </tableViewController>
@@ -470,8 +519,8 @@
         <!--Invitations-->
         <scene sceneID="X9m-jv-XT7">
             <objects>
-                <tableViewController id="CiV-yQ-ipp" customClass="ProjectList" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0ha-gR-bMf">
+                <tableViewController id="CiV-yQ-ipp" customClass="InvitationList" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="22" sectionFooterHeight="22" id="0ha-gR-bMf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -481,7 +530,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="projects" rowHeight="80" id="grO-Bw-Vwg" customClass="ProjectItemCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="projects" rowHeight="114" id="grO-Bw-Vwg" customClass="ProjectItemCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="grO-Bw-Vwg" id="rsl-dq-mW4">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -507,7 +556,7 @@
                                     <outlet property="projectIntro" destination="RtZ-BA-J5f" id="Mfl-x5-8Co"/>
                                     <outlet property="projectTitle" destination="svs-t0-IcZ" id="Ogw-Fi-EJl"/>
                                     <outlet property="thumbnailImage" destination="CE8-ih-bOs" id="I3M-5V-aEA"/>
-                                    <segue destination="7Rl-uP-vK6" kind="push" id="1GP-Ph-As5"/>
+                                    <segue destination="7Rl-uP-vK6" kind="push" identifier="showPeople" id="1GP-Ph-As5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -520,7 +569,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3a-qf-SIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1458" y="-1067"/>
+            <point key="canvasLocation" x="-1458" y="-1165"/>
         </scene>
         <!--Invitations-->
         <scene sceneID="OiF-S2-c0T">
@@ -537,7 +586,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="put-mG-qKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1998" y="-1067"/>
+            <point key="canvasLocation" x="-2428" y="-1255"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -549,4 +598,5 @@
         <segue reference="HKi-cs-zsx"/>
         <segue reference="iOw-We-wZE"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
 </document>

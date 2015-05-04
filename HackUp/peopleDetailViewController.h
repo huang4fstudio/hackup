@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSString *peopleName;
 @property (strong, nonatomic) NSString *peopleInfo;
 @property (weak, nonatomic) IBOutlet UIImageView *peopleFaceImageView;
+@property (weak, nonatomic) IBOutlet UIButton *invite;
+
 @end

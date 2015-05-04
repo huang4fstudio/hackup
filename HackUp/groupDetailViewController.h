@@ -21,4 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *groupDescriptionView;
 @property (strong, nonatomic) NSString *groupInfo;
 
+@property (weak, nonatomic) IBOutlet UIButton *joinButton;
+@property (weak, nonatomic) IBOutlet UIButton *followButton;
+
 @end

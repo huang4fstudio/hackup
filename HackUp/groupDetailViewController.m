@@ -22,6 +22,8 @@
 }
 
 - (void)updateView {
+    self.joinButton.layer.borderColor = [UIColor redColor].CGColor;
+    self.followButton.layer.borderColor = [UIColor redColor].CGColor;
     self.groupDescriptionView.text = self.groupInfo;
     self.groupFaceView.image = self.groupImage;
     self.groupTitleView.text = self.groupTitle;

@@ -23,10 +23,19 @@
 }
 
 -(void)updateView {
+    self.invite.layer.borderColor = [UIColor redColor].CGColor;
     self.peopleFaceImageView.image = self.faceImage;
     self.peopleNameView.text = self.peopleName;
     self.peopleNameView.textAlignment = NSTextAlignmentCenter;
     self.peopleInfoTextView.text = self.peopleInfo;
+}
+
+- (IBAction)handleButtonClick:(id)sender {
+    
+    [self.invite setTitle:@"Pending" forState:UIControlStateNormal];
+    [self.invite setEnabled:NO];
+    [self.invite sizeToFit];
+    self.invite.layer.borderWidth = 0;
 }
 
 - (void)didReceiveMemoryWarning {
