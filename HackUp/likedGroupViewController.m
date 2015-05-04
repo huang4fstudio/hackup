@@ -9,15 +9,29 @@
 #import "likedGroupViewController.h"
 #import "groupCellView.h"
 #import "groupDetailViewController.h"
+#import <Parse/Parse.h>
 
 @interface likedGroupViewController () <UICollectionViewDataSource>
-
+@property (strong, nonatomic) NSArray* a;
 @end
 
 @implementation likedGroupViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    PFQuery *query = [PFQuery queryWithClassName:@"Group"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            // Do something with the found objects
+            self.a = objects;
+            [self.likedGroupCollectionView reloadItemsAtIndexPaths:[self.likedGroupCollectionView indexPathsForVisibleItems]];
+            [self.likedGroupCollectionView reloadData];
+        } else {
+           
+        }
+    }];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -32,7 +46,7 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -41,9 +55,11 @@
         groupCellView *groupCell = (groupCellView *)cell;
         
         // API goes here. The followings are hard coded by me
-        groupCell.groupImageThumnail.image = [UIImage imageNamed:@"placeholder4.png"];
         
-        groupCell.groupTitle.text = [@"Group " stringByAppendingString:[NSString stringWithFormat: @"%ld", (long)(indexPath.row + 1)]];
+        groupCell.groupImageThumnail.image = [UIImage imageNamed:@"placeholder4.png"];
+        PFObject* p = self.a[indexPath.row];
+        
+        groupCell.groupTitle.text = p[@"Name"];//[@"Group " stringByAppendingString:[NSString stringWithFormat: @"%ld", (long)(indexPath.row + 1)]];
         if (indexPath.row % 3 == 0) {
             groupCell.groupIntro.text = @"IOS development";
         } else if (indexPath.row % 3 == 1) {
